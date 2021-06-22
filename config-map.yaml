@@ -105,6 +105,12 @@ data:
       - job_name: 'kube-state-metrics'
         static_configs:
           - targets: ['kube-state-metrics.kube-system.svc.cluster.local:8080']
+      
+      - job_name: 'cadvisor'
+        static_configs:
+          - targets: ['192.168.8.243:8080', '192.168.81.119:8080']
+        metrics_path: '/metrics'
+
 
       - job_name: 'kubernetes-cadvisor'
 
